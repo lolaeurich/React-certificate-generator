@@ -104,7 +104,7 @@
     position: absolute;
     left: 527px;
     top: 412px;
-    z-index: 2;
+    z-index: 1;
 }
 
 .Certificate {

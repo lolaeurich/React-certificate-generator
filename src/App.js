@@ -24,7 +24,8 @@ class App extends Component {
     handleChange(event) {
         this.setState({
             file: URL.createObjectURL(event.target.files[0])
-        })
+        }) 
+        console.log(this.state.file)
     }
 
   render() {
@@ -86,10 +87,10 @@ class App extends Component {
           />
 
           <p>Carregue a sua logo:</p>
-          <input type="file" p
-          laceholder="Selecione a sua logo..." 
-          value={this.state.Logo} 
-          onChange={this.handleChange}/>
+          <input 
+            type="file" 
+            placeholder="Selecione a sua logo..." 
+            onChange={this.handleChange}/>
 
           <button
             onClick={(e) => {
@@ -110,7 +111,8 @@ class App extends Component {
             <p className="Name">{this.state.Name}</p>
             <p className="Thanks">{this.state.Thanks}</p>
             <p className="Signature">{this.state.Signature}</p>
-            <img className="Logo" alt="">{this.state.File}</img>
+            <img className="Logo" src={this.state.file} alt=""/>
+            {console.log(this.state.file)}
             <img className ="Certificate" src={certificator} alt="Certificate" />
           </div>
         </div>
