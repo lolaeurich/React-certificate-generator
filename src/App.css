@@ -4,11 +4,15 @@
 .App {
   font-family: "Hachi Maru Pop", cursive;
   display: flex;
-  padding: 15px;
+  padding: 40px 30px 0 40px;
+  z-index: 0;
 }
 .App .Meta {
   flex-grow: 1;
   padding-right: 15px;
+  padding-top: 0px;
+  z-index: 0;
+  margin-top: -50px;
 }
 .App .Meta input {
   font-family: inherit;
@@ -22,8 +26,9 @@
   width: 150px;
   padding: 10px 15px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  background-color: orange;
+  background-color: #5569fc;
   font-family: inherit;
+  font-size: large;
   margin: 20px 0;
   border-radius: 10px;
   cursor: pointer;
@@ -32,28 +37,26 @@
 
 
 .App .Meta button:hover {
-  background-color: #4CAF50; /* Green */
+  background-color: #ea947d;
   color: white;
 }
 
 .App #downloadWrapper {
   padding: 20px;
+  z-index: 0;
 }
 .App #certificateWrapper {
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  z-index: 0;
+  display: flex;
 }
-.App #certificateWrapper img {
-  display: block;
-}
+
 
 .Curse {
   font-family: "Staatliches", cursive;
   margin: 0;
-  padding-left: 120px;
   position: absolute;
   left: 90px;
   top: 80px;
@@ -62,7 +65,6 @@
 
 .Congratulations {
   font-family: "Staatliches", cursive;
-  margin: 0;
   position: absolute;
   left: 90px;
   top: 150px;
@@ -71,31 +73,42 @@
 
 .Name {
   font-family: "Staatliches", cursive;
-  margin: 0;
-  padding-left: 120px;
+  color: #ea947d;
   position: absolute;
   left: 90px;
-  top: 200px;
+  top: 160px;
   font-size: 40pt;
 }
 
 .Thanks {
   font-family: "Staatliches", cursive;
-  margin: 0;
-  position: absolute;
-  left: 30px;
-  top: 300px;
-  font-size: 15pt;
-}
-
-.Logo {
-  width: 70px;
-  height: 70px;
-  margin: 0;
   position: absolute;
   left: 90px;
-  top: 300px;
+  right: 90px;
+  top: 275px;
   font-size: 15pt;
-  z-index: 1;
 }
 
+.Signature {
+    font-family: "Staatliches", cursive;
+    position: absolute;
+    left: 70px;
+    top: 420px;
+    font-size: 10pt;
+}
+
+.App #certificateWrapper .Logo {
+    width: 75px;
+    height: 65px;
+    margin: 0;
+    position: absolute;
+    left: 527px;
+    top: 412px;
+    z-index: 2;
+}
+
+.Certificate {
+  display: block;
+  width: 100%;
+  height: 500px;
+}

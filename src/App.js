@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { exportComponentAsPNG } from "react-component-export-image"
+import certificator from "../src/assets/certificator.png"
 
 class App extends Component {
 
@@ -9,6 +10,7 @@ class App extends Component {
     Congratulations: "",
     Name: "",
     Thanks: "",
+    Signature: ""
   }
 
     constructor(props){
@@ -18,6 +20,7 @@ class App extends Component {
         }
         this.handleChange = this.handleChange.bind(this)
     }
+    
     handleChange(event) {
         this.setState({
             file: URL.createObjectURL(event.target.files[0])
@@ -72,7 +75,17 @@ class App extends Component {
             }}
           />
 
-          <p>Informe a URL da sua logo:</p>
+          <p>Nome do assinante:</p>
+          <input
+            type="text"
+            placeholder="Quem assina este certificado?"
+            value={this.state.Signature}
+            onChange={(e) => {
+              this.setState({ Signature: e.target.value });
+            }}
+          />
+
+          <p>Carregue a sua logo:</p>
           <input type="file" p
           laceholder="Selecione a sua logo..." 
           value={this.state.Logo} 
@@ -96,8 +109,9 @@ class App extends Component {
             <p className="Congratulations">{this.state.Congratulations}</p>
             <p className="Name">{this.state.Name}</p>
             <p className="Thanks">{this.state.Thanks}</p>
+            <p className="Signature">{this.state.Signature}</p>
             <img className="Logo" alt="">{this.state.File}</img>
-            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/certificate-empty-2-design-template-072e88bdcc0fa0d50289b8a5ac857ec7_screen.jpg?ts=1631689062" alt="Certificate" />
+            <img className ="Certificate" src={certificator} alt="Certificate" />
           </div>
         </div>
       </div>
